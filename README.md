@@ -12,4 +12,5 @@ Hi, I'm Boonsuen - a front-end developer. 🙌
 - Dev.to: https://dev.to/boon
 - CodePen: https://codepen.io/boonsuen
 
-![Github stats](https://github-readme-stats.vercel.app/api?username=boonsuen&show_icons=true)![Profile views](https://gpvc.arturio.dev/boonsuen)
+![Github stats](https://github-readme-stats.vercel.app/api?username=boonsuen&show_icons=true)<br>
+![Profile views](https://gpvc.arturio.dev/boonsuen)
