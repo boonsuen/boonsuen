@@ -40,64 +40,6 @@ const Hero = () => (
   </StyledHero>
 );
 
-const StyledContactForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 325px;
-  margin-top: 35px;
-
-  & > div {
-    position: relative;
-  }
-
-  label {
-    display: block;
-    margin-top: 10px;
-    position: absolute;
-    top: 10px;
-  }
-
-  input {
-    width: 100%;
-    height: 57px;
-    margin-bottom: 10px;
-    border-width: 0 0 1px 0;
-    border-bottom: 1px solid;
-    outline: none;
-    padding: 15px 0 5px 0;
-  }
-
-  button {
-    width: 125px;
-    height: 48px;
-    margin-top: 38px;
-    border: 1px solid;
-    border-radius: 0;
-    font-size: 16px;
-    background: #fff;
-    cursor: pointer;
-    outline: none;
-  }
-`;
-
-const ContactForm = () => (
-  <StyledContactForm onSubmit={(e) => e.preventDefault()}>
-    <div>
-      <label>Name</label>
-      <input type="text" />
-    </div>
-    <div>
-      <label>Email</label>
-      <input type="email" />
-    </div>
-    <div>
-      <label>Message</label>
-      <input type="text" />
-    </div>    
-    <button type="submit">Send</button>
-  </StyledContactForm>
-);
-
 const SocialMedia = styled.div`
   width: 300px;
   height: 130px;
@@ -146,7 +88,6 @@ const ContactPage = () => (
     <SEO title="Contact" />
     <Hero />    
     <div className="container">
-      <ContactForm />
       <SocialMedia>
         <h3>Social Media</h3>
         <div>
