@@ -15,4 +15,4 @@ Hi, I'm Boonsuen - a front-end developer. 🙌
 ![Github stats](https://github-readme-stats.vercel.app/api?username=boonsuen&show_icons=true)<br>
 ![Profile views](https://gpvc.arturio.dev/boonsuen)
 
-<img src="header.svg" width="800" height="400">
+<img src="https://raw.githubusercontent.com/boonsuen/boonsuen/master/header.svg" width="800" height="400">
