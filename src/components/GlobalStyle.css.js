@@ -17,14 +17,14 @@ export const fontFaceRules = `
   @font-face {
     font-family: "Inter";
     src: url(${InterRegularWoff2}) format('woff2'),
-         url(${InterRegularWoff}) format('woff);
+         url(${InterRegularWoff}) format('woff');
     font-weight: 400;
   }
 
   @font-face {
     font-family: "Inter";
     src: url(${InterBoldWoff2}) format('woff2'),
-         url(${InterBoldWoff}) format('woff);
+         url(${InterBoldWoff}) format('woff');
     font-weight: 700;
   }
 `;
