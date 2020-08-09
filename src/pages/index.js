@@ -45,7 +45,7 @@ const Hero = () => (
       </Nav>
       <Name type="ZH">文轩</Name>
       <Name type="EN">Boonsuen Oh</Name>
-      <p>Frontend developer. Enjoy writing web and JavaScript applications.</p>
+      <p role="doc-subtitle">Frontend developer. Enjoy writing web and JavaScript applications.</p>
     </div>
   </StyledHero>
 );
