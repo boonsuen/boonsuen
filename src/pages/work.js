@@ -42,6 +42,13 @@ const ProjectSection = styled.section`
   }
 `;
 
+const Projects = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+`;
+
 const Project = styled.div`
   display: flex;
   flex-direction: column;
@@ -67,6 +74,12 @@ const Project = styled.div`
     line-height: 38px;
     border: 1px solid;
     color: #303030;
+    transition: all 0.25s;
+
+    &:hover {
+      color: #fff;
+      background: #303030;
+    }
   }
 `;
 
@@ -96,11 +109,18 @@ const WorkPage = () => (
     <Hero />
     <ProjectSection className="container">
       <h2>Small projects</h2>
-      <Project>
-        <h3>Hodler</h3>
-        <p>A simple crypto price viewer.</p>
-        <a href="https://boonsuen.com/hodler/" target="_blank" rel="noreferrer">Open</a>
-      </Project>
+      <Projects>
+        <Project>
+          <h3>Hodler</h3>
+          <p>A simple crypto price viewer.</p>
+          <a href="https://boonsuen.com/hodler/" target="_blank" rel="noreferrer">Open</a>
+        </Project>      
+        <Project>
+          <h3>ticTacToe</h3>
+          <p>A tic-tac-toe game.</p>
+          <a href="https://boonsuen.com/tictactoe/" target="_blank" rel="noreferrer">Open</a>
+        </Project>
+      </Projects>
     </ProjectSection>
     <Footer>
       <div className="container">
