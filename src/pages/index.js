@@ -22,17 +22,8 @@ const Nav = styled.nav`
 `;
 
 const Name = styled.h1`
-  ${({type}) => type === 'EN' 
-    ? 
-    `
-    margin-bottom: 1.75rem;
-    font-size: 36px;
-    `
-    : 
-    `
-    margin-bottom: 1.05rem;
-    font-size: 48px;
-    `}
+  margin-bottom: 1.75rem;
+  font-size: 36px;
 `;
 
 const Hero = () => (
@@ -43,9 +34,10 @@ const Hero = () => (
         <Link to="/work/">Work</Link>
         <Link to="/contact/">Contact</Link>
       </Nav>
-      <Name type="ZH">文轩</Name>
-      <Name type="EN">Boonsuen Oh</Name>
-      <p role="doc-subtitle">Frontend developer. Enjoy writing web and JavaScript applications.</p>
+      <Name>Boonsuen Oh</Name>
+      <p role="doc-subtitle">
+        Hi, I'm Boonsuen. I'm a frontend developer focusing on JavaScript (React and Node). I'm also interested in Rust and Serverless technology.
+      </p>
     </div>
   </StyledHero>
 );
