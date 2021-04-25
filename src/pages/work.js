@@ -46,17 +46,21 @@ const Projects = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 30px;
 `;
 
 const Project = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 364px;
-  height: 190px;
+  width: 48%;
+  height: 200px;
   padding: 32px;
   box-shadow: 0px 8px 18px rgb(25 25 25 / 0.1);
+  margin-bottom: 30px;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 
   h3, p, a {
     font-size: 16px;
@@ -119,6 +123,11 @@ const WorkPage = () => (
           <h3>ticTacToe</h3>
           <p>A tic-tac-toe game.</p>
           <a href="https://boonsuen.com/tictactoe/" target="_blank" rel="noreferrer">Open</a>
+        </Project>
+        <Project>
+          <h3>Recurr</h3>
+          <p>An android app to manage & track subscriptions.</p>
+          <a href="https://github.com/boonsuen/recurr" target="_blank" rel="noreferrer">Open</a>
         </Project>
       </Projects>
     </ProjectSection>
