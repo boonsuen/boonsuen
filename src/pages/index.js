@@ -18,6 +18,17 @@ const Nav = styled.nav`
 
   a {
     color: #fff;
+  
+    div {
+      width: 0%;
+      height: 1px;
+      background-color: #fff;
+      transition: width 300ms;
+    }
+
+    &:hover div {
+      width: 100%;
+    }
   }
 `;
 
@@ -30,9 +41,9 @@ const Hero = () => (
   <StyledHero>
     <div className="container">      
       <Nav>
-        <Link to="/">Home</Link>
-        <Link to="/work/">Work</Link>
-        <Link to="/contact/">Contact</Link>
+        <Link to="/">Home<div></div></Link>
+        <Link to="/work/">Work<div></div></Link>
+        <Link to="/contact/">Contact<div></div></Link>
       </Nav>
       <Name>Boonsuen Oh</Name>
       <p role="doc-subtitle">
