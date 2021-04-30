@@ -87,7 +87,7 @@ const Project = styled.div`
     width: 100px;
     height: 40px;
     line-height: 38px;
-    border: 1px solid;
+    border: 1px solid #303030;
     color: #303030;
     transition: all 0.25s;
 
