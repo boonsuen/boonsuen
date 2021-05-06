@@ -8,6 +8,14 @@ exports.wrapPageElement = ({ element, props }) => {
     <React.Fragment>
       <Helmet>
         <style>{fontFaceRules}</style>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR31CLCPW1"></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-PR31CLCPW1');`}
+        </script>
       </Helmet>
       <GlobalStyle />
       {element}
