@@ -47,7 +47,7 @@ const Hero = () => (
       </Nav>
       <Name>Boonsuen Oh</Name>
       <p role="doc-subtitle">
-        Hi, I'm Boonsuen. I'm a frontend developer focusing on JavaScript (React and Node). I'm also interested in Rust and Serverless ecosystem.
+        Hi, I'm Boonsuen. I'm a frontend developer with a focus on JavaScript (React and Node). I'm also interested in Rust and Serverless ecosystem.
       </p>
     </div>
   </StyledHero>
