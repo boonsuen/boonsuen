@@ -62,9 +62,8 @@ const Projects = styled.div`
 const Project = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 48%;
-  height: 200px;
   padding: 32px;
   box-shadow: 0px 8px 18px rgb(25 25 25 / 0.1);
   margin-bottom: 30px;
@@ -75,6 +74,10 @@ const Project = styled.div`
 
   h3, p, a {
     font-size: 16px;
+  }
+
+  a {
+    margin-top: auto;
   }
 
   h3 {
@@ -129,7 +132,12 @@ const WorkPage = () => (
           <h3>Hodler</h3>
           <p>A simple crypto price viewer.</p>
           <a href="https://boonsuen.com/hodler/" target="_blank" rel="noreferrer">Open</a>
-        </Project>      
+        </Project>  
+        <Project>
+          <h3>Process Scheduling Solver</h3>
+          <p>Generate gantt chart and calculation for CPU scheduling algorithms.</p>
+          <a href="https://boonsuen.com/process-scheduling-solver" target="_blank" rel="noreferrer">Open</a>
+        </Project>    
         <Project>
           <h3>ticTacToe</h3>
           <p>A tic-tac-toe game.</p>

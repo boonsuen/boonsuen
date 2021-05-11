@@ -45,7 +45,7 @@ const Hero = () => (
         <Link to="/work/">Work<div></div></Link>
         <Link to="/contact/">Contact<div></div></Link>
       </Nav>
-      <Name>Boonsuen Oh</Name>
+      <Name>Hello there</Name>
       <p role="doc-subtitle">
         Hi, I'm Boonsuen. I'm a frontend developer with a focus on JavaScript (React and Node). I'm also interested in Rust and Serverless ecosystem.
       </p>
