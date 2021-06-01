@@ -9,7 +9,7 @@ Hi, I'm Boonsuen - a front-end developer. 🙌
 ## Find me on
 - Personal site: https://boonsuen.com
 - Twitter: https://twitter.com/_wnxn
-- Dev.to: https://dev.to/boon
+- Dev.to: https://dev.to/wnxn
 - CodePen: https://codepen.io/boonsuen
 
 ![Github stats](https://github-readme-stats.vercel.app/api?username=boonsuen&show_icons=true)<br>
