@@ -6,8 +6,21 @@ import SEO from '../components/seo';
 
 const StyledHero = styled.header`
   height: 570px;
-  background-color: #110F21;
-  color: #fff;
+  background: radial-gradient(
+      ellipse at 103% 161%,
+      #476fde 17%,
+      rgba(255, 255, 255, 0) 40%
+    ),
+    linear-gradient(318deg, #f78ff0 0%, rgba(255, 255, 255, 0) 46%),
+    linear-gradient(182deg, #d9deff 49%, rgba(255, 255, 255, 0) 79%),
+    linear-gradient(243deg, #f1d1f8 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(18deg, #ff9670 39%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(
+      circle at 104% 148%,
+      #a0289d 39%,
+      rgba(255, 255, 255, 0) 84%
+    );  
+  color: #314354;
 `;
 
 const Nav = styled.nav`
@@ -17,12 +30,12 @@ const Nav = styled.nav`
   padding: 75px 0;
 
   a {
-    color: #fff;
+    color: #314354;
   
     div {
       width: 0%;
       height: 1px;
-      background-color: #fff;
+      background-color: #314354;
       transition: width 300ms;
     }
 
@@ -32,7 +45,8 @@ const Nav = styled.nav`
   }
 `;
 
-const Name = styled.h1`
+const Title = styled.h1`
+  color: #131339;
   margin-bottom: 1.75rem;
   font-size: 36px;
 `;
@@ -45,7 +59,7 @@ const Hero = () => (
         <Link to="/work/">Work<div></div></Link>
         <Link to="/contact/">Contact<div></div></Link>
       </Nav>
-      <Name>Hello there</Name>
+      <Title>Hello there</Title>
       <p role="doc-subtitle">
         Hi, I'm Boonsuen. I'm a frontend developer with a focus on JavaScript (React and Node). I'm also interested in Rust and Serverless ecosystem.
       </p>
