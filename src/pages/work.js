@@ -6,8 +6,9 @@ import SEO from "../components/seo"
 
 const StyledHero = styled.header`
   height: 320px;
-  background-color: #110F21;
-  color: #fff;
+  /* background-color: #110F21; */
+  background: conic-gradient(from -90deg at bottom center, papayawhip, peachpuff);
+  color: #314354;
 `;
 
 const Nav = styled.nav`
@@ -17,12 +18,12 @@ const Nav = styled.nav`
   padding: 75px 0;
 
   a {
-    color: #fff;
+    color: #314354;
 
     div {
       width: 0%;
       height: 1px;
-      background-color: #fff;
+      background-color: #314354;
       transition: width 300ms;
     }
 
@@ -40,7 +41,7 @@ const Hero = () => (
         <Link to="/work/">Work<div></div></Link>
         <Link to="/contact/">Contact<div></div></Link>
       </Nav>
-      <h1>My work</h1>
+      <h1>My Work</h1>
     </div>
   </StyledHero>
 );
