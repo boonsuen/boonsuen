@@ -156,7 +156,7 @@ const WorkPage = () => (
         <span>Find me on</span>
         <FooterLinksWrapper>
           <a href="https://twitter.com/_wnxn" target="_blank" rel="noreferrer">Twitter</a>
-          <a href="https://facebook.com/boonsuen" target="_blank" rel="noreferrer">Facebook</a>
+          <a href="https://github.com/boonsuen" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://instagram.com/_wnxn_" target="_blank" rel="noreferrer">Instagram</a>
         </FooterLinksWrapper>      
       </div>
