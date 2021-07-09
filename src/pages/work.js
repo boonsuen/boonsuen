@@ -130,14 +130,14 @@ const WorkPage = () => (
       <h2>Small projects</h2>
       <Projects>
         <Project>
-          <h3>Hodler</h3>
-          <p>A simple crypto price viewer.</p>
-          <a href="https://boonsuen.com/hodler/" target="_blank" rel="noreferrer">Open</a>
-        </Project>  
-        <Project>
           <h3>Process Scheduling Solver</h3>
           <p>Generate gantt chart and calculation for CPU scheduling algorithms.</p>
           <a href="https://boonsuen.com/process-scheduling-solver" target="_blank" rel="noreferrer">Open</a>
+        </Project>
+        <Project>
+          <h3>Hodler</h3>
+          <p>A simple crypto price viewer.</p>
+          <a href="https://boonsuen.com/hodler/" target="_blank" rel="noreferrer">Open</a>
         </Project>    
         <Project>
           <h3>ticTacToe</h3>
