@@ -68,7 +68,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <meta name="propeller" content="1f8e18a05491fec83193b918d6c37be6" />
+    </Helmet>
   )
 }
 
@@ -85,4 +87,4 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-export default SEO;
+export default SEO
