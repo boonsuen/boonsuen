@@ -69,7 +69,7 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-      <meta name="propeller" content="1f8e18a05491fec83193b918d6c37be6" />
+      <meta name="purpleads-verification" content="7f0ebc0c90a7d07174c1cf82"/>
     </Helmet>
   )
 }
