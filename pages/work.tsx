@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
-
-import SEO from "../components/seo"
+import Layout from '../layout/Layout';
+import Nav from '../ui/Nav';
 
 const StyledHero = styled.header`
   height: 320px;
@@ -11,36 +10,10 @@ const StyledHero = styled.header`
   color: #314354;
 `;
 
-const Nav = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  width: 252px;
-  padding: 75px 0;
-
-  a {
-    color: #314354;
-
-    div {
-      width: 0%;
-      height: 1px;
-      background-color: #314354;
-      transition: width 300ms;
-    }
-
-    &:hover div {
-      width: 100%;
-    }
-  }
-`;
-
 const Hero = () => (
   <StyledHero>
     <div className="container">      
-      <Nav>
-        <Link to="/">Home<div></div></Link>
-        <Link to="/work/">Work<div></div></Link>
-        <Link to="/contact/">Contact<div></div></Link>
-      </Nav>
+      <Nav />
       <h1>My Work</h1>
     </div>
   </StyledHero>
@@ -102,29 +75,8 @@ const Project = styled.div`
   }
 `;
 
-const Footer = styled.footer`
-  height: 225px;
-  padding-top: 56px;
-  background-color: #000;
-  color: #fff;
-
-  span {
-    margin-right: 35px;
-  }
-
-  a {
-    color: #B0B0B0;
-  }
-`;
-
-const FooterLinksWrapper = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-`;
-
 const WorkPage = () => (
-  <>
-    <SEO title="Work" />
+  <Layout docTitle="Work | Boonsuen" footerTheme="DARK">
     <Hero />
     <ProjectSection className="container">
       <h2>Small projects</h2>
@@ -150,18 +102,8 @@ const WorkPage = () => (
           <a href="https://github.com/boonsuen/recurr" target="_blank" rel="noreferrer">Open</a>
         </Project>
       </Projects>
-    </ProjectSection>
-    <Footer>
-      <div className="container">
-        <span>Find me on</span>
-        <FooterLinksWrapper>
-          <a href="https://twitter.com/_wnxn" target="_blank" rel="noreferrer">Twitter</a>
-          <a href="https://github.com/boonsuen" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://instagram.com/_wnxn_" target="_blank" rel="noreferrer">Instagram</a>
-        </FooterLinksWrapper>      
-      </div>
-    </Footer>
-  </>
+    </ProjectSection>    
+  </Layout>
 );
 
 export default WorkPage;
