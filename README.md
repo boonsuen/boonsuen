@@ -1,7 +1,6 @@
-# Boonsuen Oh
-Hi, I'm Boonsuen - a front-end developer. 🙌
+### Hey there, you found me. 👋
 
-## My favourite technologies are
+## I love working with
 🌟 React<br>
 🍏 Node.js<br>
 🚀 GraphQL<br>
@@ -12,8 +11,8 @@ Hi, I'm Boonsuen - a front-end developer. 🙌
 - Dev.to: https://dev.to/wnxn
 - CodePen: https://codepen.io/boonsuen
 
-![Github stats](https://github-readme-stats.vercel.app/api?username=boonsuen&show_icons=true)<br>
-![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=boonsuen&layout=compact&langs_count=6)<br>
-![Profile views](https://gpvc.arturio.dev/boonsuen)
+My GitHub stats
+[![Github stats](https://github-readme-stats.vercel.app/api?username=boonsuen&show_icons=true&hide_title=true&hide_border=true)](https://boonsuen.com)<br>
+![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=boonsuen&layout=compact&langs_count=6)
 <!-- 
 <img src="https://raw.githubusercontent.com/boonsuen/boonsuen/master/header.svg" width="400" height="200"> -->
