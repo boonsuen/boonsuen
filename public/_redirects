@@ -1,8 +1,0 @@
-/hodler-serverful/* https://hodler-app.herokuapp.com/:splat 200!
-
-/hodler/* https://hodler.netlify.app/:splat 200!
-
-/tictactoe/* https://tictactoe-bs.netlify.app/:splat 200!
-
-/process-scheduling-solver https://process-scheduling-solver.vercel.app/process-scheduling-solver 200!
-/process-scheduling-solver/* https://process-scheduling-solver.vercel.app/process-scheduling-solver/:splat 200!
