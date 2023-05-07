@@ -11,7 +11,7 @@
 - Dev.to: https://dev.to/wnxn
 - CodePen: https://codepen.io/boonsuen
 
-My GitHub stats<br>
+## My GitHub Stats
 [![Github stats](https://github-readme-stats.vercel.app/api?username=boonsuen&show_icons=true&hide_title=true&hide_border=true)](https://boonsuen.com)<br>
 ![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=boonsuen&layout=compact&langs_count=6&hide_border=true)
 <!-- 
