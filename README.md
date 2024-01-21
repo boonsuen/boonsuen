@@ -1,9 +1,7 @@
 ### Hey there, you found me. 👋
 
-## I love working with
-🌟 React<br>
-🍏 Node.js<br>
-🚀 GraphQL<br>
+## About me
+I'm a design-driven developer who works web dev things. Aside from that, I like diving into database engineering and distributed systems.
 
 ## Find me on
 - Personal site: https://boonsuen.com
