@@ -89,12 +89,12 @@ const WorkPage = () => (
         <Project>
           <h3>Hodler</h3>
           <p>A simple crypto price viewer.</p>
-          <a href="https://boonsuen.com/hodler/" target="_blank" rel="noreferrer">Open</a>
+          <a href="https://hodler.boonsuen.com" target="_blank" rel="noreferrer">Open</a>
         </Project>    
         <Project>
           <h3>ticTacToe</h3>
           <p>A tic-tac-toe game.</p>
-          <a href="https://boonsuen.com/tictactoe/" target="_blank" rel="noreferrer">Open</a>
+          <a href="https://tictactoe.boonsuen.com" target="_blank" rel="noreferrer">Open</a>
         </Project>
         <Project>
           <h3>Recurr</h3>
