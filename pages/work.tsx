@@ -84,7 +84,7 @@ const WorkPage = () => (
         <Project>
           <h3>Process Scheduling Solver</h3>
           <p>Generate gantt chart and calculation for CPU scheduling algorithms.</p>
-          <a href="https://boonsuen.com/process-scheduling-solver" target="_blank" rel="noreferrer">Open</a>
+          <a href="https://process-scheduling-solver.boonsuen.com" target="_blank" rel="noreferrer">Open</a>
         </Project>
         <Project>
           <h3>Hodler</h3>
