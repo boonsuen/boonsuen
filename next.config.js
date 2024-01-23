@@ -5,16 +5,17 @@
   compiler: {
     styledComponents: true,
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
         source: '/process-scheduling-solver',
-        destination: 'https://process-scheduling-solver.vercel.app/process-scheduling-solver',
+        destination: 'https://process-scheduling-solver.boonsuen.com',
+        permanent: true,
       },
-      {
-        source: '/process-scheduling-solver/:slug*',
-        destination: 'https://process-scheduling-solver.vercel.app/process-scheduling-solver/:slug*',
-      },
+    ]
+  },
+  async rewrites() {
+    return [
       {
         source: '/hodler',
         destination: 'https://hodler.netlify.app',
