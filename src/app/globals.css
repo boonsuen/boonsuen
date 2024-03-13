@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-main;
+  }
+}
+
+@layer utilities {
+  .layout-container {
+    @apply max-w-[1345px] mx-auto px-6 box-content;
+  }
+
+  .layout-grid-container {
+    @apply grid grid-cols-6;
+  }
+}
