@@ -8,7 +8,7 @@ export default function WorkPage() {
       </h1>
       <hr className="border-main/20" />
       <p className="uppercase mt-6 mb-12 text-[15px]">
-        Some of the personal projects I've made.
+        Some of the personal projects I&apos;ve made.
       </p>
 
       <div className="layout-grid-container">
