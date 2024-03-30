@@ -3,8 +3,173 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 2.5rem;
+    --space-8: 3rem;
+    --space-9: 4rem;
+  }
+
   body {
     @apply text-main;
+  }
+
+  .prose h2 {
+    @apply text-[28px] mb-2 mt-16 font-serif;
+  }
+
+  .prose ol,
+  .prose ul {
+    list-style-position: inside;
+    list-style: none;
+    margin-left: var(--space-6);
+  }
+
+  .prose li {
+    position: relative;
+  }
+
+  .prose li:before {
+    display: inline-block;
+    position: absolute;
+    margin-left: calc(var(--space-6) * -1);
+  }
+
+  .prose ul li:before {
+    content: '—';
+  }
+
+  .prose ol {
+    counter-reset: list;
+  }
+
+  .prose ol li:before {
+    counter-increment: list;
+    content: counter(list);
+  }
+
+  .prose hr {
+    width: var(--space-9);
+    margin: var(--space-9) auto;
+    height: 1px;
+    background-color: var(--accent);
+    border: none;
+  }
+
+  .prose strong {
+    color: var(--gray-12);
+    font-weight: 500;
+  }
+
+  .prose em {
+    font-family: var(--font-editorial-new);
+  }
+
+  .prose a {
+    color: var(--accent);
+  }
+
+  @media (hover: hover) {
+    .prose a:hover {
+      transition: text-decoration-color 0.1s ease-in-out;
+      text-decoration-color: var(--accent);
+    }
+  }
+
+  .prose .blockquote {
+    border-left: 2px solid var(--accent);
+    padding-left: var(--space-6);
+  }
+
+  .prose .blockquote p {
+    color: inherit;
+    font-family: var(--font-editorial-new);
+    font-size: var(--font-size-6);
+    --line-height: var(--line-height-6);
+    --letter-spacing: 0;
+    font-style: italic;
+  }
+
+  .prose .anchor {
+    @apply absolute invisible no-underline;
+
+    margin-left: -1em;
+    padding-right: 0.5em;
+    width: 80%;
+    max-width: 700px;
+    cursor: pointer;
+  }
+
+  .anchor:hover {
+    @apply visible;
+  }
+
+  .prose a {
+    @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  }
+
+  .prose .anchor:after {
+    @apply text-neutral-300 dark:text-neutral-700;
+    content: '#';
+  }
+
+  .prose *:hover > .anchor {
+    @apply visible;
+  }
+
+  .prose pre {
+    @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
+  }
+
+  .prose code {
+    @apply px-1 py-0.5 rounded-lg;
+  }
+
+  .prose pre code {
+    @apply p-0;
+    border: initial;
+    line-height: 1.5;
+  }
+
+  .prose code span {
+    @apply font-medium;
+  }
+
+  .prose img {
+    /* Don't apply styles to next/image */
+    @apply m-0;
+  }
+
+  .prose h2,
+  h3,
+  h4 {
+    @apply font-medium tracking-tighter !important;
+  }
+
+  .prose strong {
+    @apply font-medium;
+  }
+
+  pre::-webkit-scrollbar {
+    display: none;
+  }
+
+  pre {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .prose .callout > p {
+    margin: 0 !important;
+  }
+
+  .title {
+    text-wrap: balance;
   }
 }
 
