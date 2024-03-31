@@ -1,4 +1,14 @@
-const withMDX = require('@next/mdx')();
+import * as NextMdx from '@next/mdx';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
+const withMDX = NextMdx.default({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,4 +27,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);

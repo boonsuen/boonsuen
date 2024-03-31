@@ -23,6 +23,14 @@
     @apply text-[28px] mb-2 mt-16 font-serif;
   }
 
+  .prose p {
+    @apply mt-2 mb-6;
+  }
+
+  .prose li p {
+    @apply mt-0 mb-0;
+  }
+
   .prose ol,
   .prose ul {
     list-style-position: inside;
@@ -31,7 +39,7 @@
   }
 
   .prose li {
-    position: relative;
+    @apply relative mb-2;
   }
 
   .prose li:before {
@@ -143,12 +151,6 @@
   .prose img {
     /* Don't apply styles to next/image */
     @apply m-0;
-  }
-
-  .prose h2,
-  h3,
-  h4 {
-    @apply font-medium tracking-tighter !important;
   }
 
   .prose strong {

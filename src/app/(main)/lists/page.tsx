@@ -1,4 +1,4 @@
-import ListsMDX from '../../content/lists.mdx';
+import ListsMDX from '../../content/pages/lists.mdx';
 
 export default function ListsPage() {
   return (
@@ -8,7 +8,7 @@ export default function ListsPage() {
       </h1>
       <hr className="border-main/20" />
       <p className="uppercase mt-6 mb-12 text-[15px]">
-        A space for unsorted items
+        A space for unsorted items.
       </p>
       <div data-mdx="true" className="prose">
         <ListsMDX />

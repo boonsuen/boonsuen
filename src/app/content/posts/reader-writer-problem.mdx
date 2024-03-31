@@ -1,0 +1,19 @@
+---
+title: 'Reader-Writer Problem: Concurrency Control'
+publishedAt: '2024-03-02'
+---
+
+When two overlapping transactions are executing concurrently, both involve modifying the same set of overlapping data, neither one of them should observe partial results of the other to maintain consistency.
+An example for partial results would be a state where a thread has updated some parts of the data but not all of them.
+In this case, any read to the data that is in the middle of being updated can be accessing potentially inconsistent and corrupted data.
+
+## Readers-writer lock
+
+To solve the reader-writer problem, one of the solutions is to use a readers-writer lock.
+
+- Readers can access database when there are no writers
+- Writers can access database when there are no readers/writers
+- Only one thread can manipulate shared variables at any time
+
+- It means, when a writer is writing data, no other threads are able to do anything including both reads and writes.
+- When a reader is reading data, then other readers are allowed to read the same data.
