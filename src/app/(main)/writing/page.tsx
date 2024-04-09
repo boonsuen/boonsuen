@@ -26,7 +26,7 @@ export default function WritingPage() {
           <Link
             key={post.slug}
             className="flex flex-col space-y-1 mb-4"
-            href={`/posts/${post.slug}`}
+            href={`/writing/${post.slug}`}
           >
             <div className="w-full flex flex-col">
               <p className="text-lg">{post.metadata.title}</p>
