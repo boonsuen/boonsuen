@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
-import { unstable_noStore } from 'next/cache';
 import { getPosts } from '@/app/db/posts';
 import { CustomMDX } from '@/components/mdx';
 
 export async function generateStaticParams() {
-  let posts = getPosts();
+  const posts = getPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -44,7 +42,6 @@ export async function generateMetadata({
 }
 
 function formatDate(date: string) {
-  unstable_noStore();
   if (!date.includes('T')) {
     date = `${date}T00:00:00`;
   }
