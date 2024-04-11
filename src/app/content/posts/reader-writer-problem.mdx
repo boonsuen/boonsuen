@@ -15,5 +15,85 @@ To solve the reader-writer problem, one of the solutions is to use a readers-wri
 - Writers can access database when there are no readers/writers
 - Only one thread can manipulate shared variables at any time
 
-- It means, when a writer is writing data, no other threads are able to do anything including both reads and writes.
-- When a reader is reading data, then other readers are allowed to read the same data.
+It means, when a writer is writing data, no other threads are able to do anything including both reads and writes.
+When a reader is reading data, then other readers are allowed to read the same data.
+
+Granting only one thread to read or write at a time solves the problem.
+However, it can slow things down when we have a read-intensive process.
+For example, when there are only few threads want to write data while many threads want to read data.
+The RW lock improves the performance by allowing multiple readers to read data at the same time, reducing the synchronization overhead between the readers.
+
+<Table
+  data={{
+    headers: ['', 'Reader', 'Writer'],
+    rows: [
+      ['Reader', 'Shared', 'Exclusive'],
+      ['Writer', 'Exclusve', 'Exclusive'],
+    ],
+  }}
+/>
+
+### RWMutex in Go
+
+In Go, the `sync` package provides a `RWMutex` type as the readers-writer lock.
+It allows multiple readers or a single writer to access a resource at the same time, ensuring safe concurrent access of shared resources by multiple goroutines.
+
+In the following example, the map `data` is shared between multiple goroutines.
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+type resource struct {
+	data map[string]int
+	mu   sync.RWMutex
+}
+
+func (r *resource) read(key string) int {
+	r.mu.RLock()
+	defer r.mu.RUnlock()
+	return r.data[key]
+}
+
+func (r *resource) write(key string, value int) {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	r.data[key] = value
+}
+
+func main() {
+	r := &resource{data: make(map[string]int)}
+	r.write("key", 1)
+	go func() {
+		r.write("key", 2)
+	}()
+	fmt.Println(r.read("key"))
+}
+```
+
+If we run the code above with go run -race main.go, we'll encounter the data race error from the compiler.
+To fix the issue, we can use the `RWMutex` to synchronize the access to the shared data.
+
+```go
+func (r *resource) read(key string) int {
+	r.mu.RLock()
+	defer r.mu.RUnlock()
+	return r.data[key]
+}
+
+func (r *resource) write(key string, value int) {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	r.data[key] = value
+}
+```
+
+The `RLock` method is used to acquire a read lock, and `RUnlock` is used to release the lock.
+If a goroutine tries to call Lock() while other goroutines are already reading, any read attempts calling RLock() will block & wait until the writing goroutine has acquired the lock and finished.
+This makes sure the lock is eventually free for writing.
+
+Aside from this lock-based solution, there are other synchronization methods to deal with the reader-writer problem, such as semaphore and monitor-based solutions.

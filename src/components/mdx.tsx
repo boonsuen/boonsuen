@@ -1,15 +1,31 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import React from 'react';
+import { highlight } from 'sugar-high';
 
-function slugify(str: string) {
-  return str
-    .toString()
-    .toLowerCase()
-    .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
-    .replace(/\-\-+/g, '-'); // Replace multiple - with single -
+function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
+  let headers = data.headers.map((header, index) => (
+    <th key={index}>{header}</th>
+  ));
+  let rows = data.rows.map((row, index) => (
+    <tr key={index}>
+      {row.map((cell, cellIndex) => (
+        <td key={cellIndex}>{cell}</td>
+      ))}
+    </tr>
+  ));
+
+  return (
+    <table>
+      <thead>
+        <tr>{headers}</tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+  );
+}
+
+function Code({ children, ...props }: any) {
+  let codeHTML = highlight(children);
+  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
 interface Props {
@@ -17,5 +33,13 @@ interface Props {
 }
 
 export function CustomMDX(props: Props) {
-  return <MDXRemote {...props} components={{}} />;
+  return (
+    <MDXRemote
+      {...props}
+      components={{
+        code: Code,
+        Table,
+      }}
+    />
+  );
 }
