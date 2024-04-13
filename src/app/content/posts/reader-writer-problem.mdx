@@ -54,14 +54,10 @@ type resource struct {
 }
 
 func (r *resource) read(key string) int {
-	r.mu.RLock()
-	defer r.mu.RUnlock()
 	return r.data[key]
 }
 
 func (r *resource) write(key string, value int) {
-	r.mu.Lock()
-	defer r.mu.Unlock()
 	r.data[key] = value
 }
 
@@ -75,7 +71,7 @@ func main() {
 }
 ```
 
-If we run the code above with go run -race main.go, we'll encounter the data race error from the compiler.
+If we run the code above with `go run -race main.go{:plaintext}`, we'll encounter the data race error from the compiler.
 To fix the issue, we can use the `RWMutex` to synchronize the access to the shared data.
 
 ```go

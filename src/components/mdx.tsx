@@ -1,5 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { highlight } from 'sugar-high';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   let headers = data.headers.map((header, index) => (
@@ -23,11 +25,6 @@ function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   );
 }
 
-function Code({ children, ...props }: any) {
-  let codeHTML = highlight(children);
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
-}
-
 interface Props {
   source: string;
 }
@@ -35,9 +32,22 @@ interface Props {
 export function CustomMDX(props: Props) {
   return (
     <MDXRemote
+      options={{
+        mdxOptions: {
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [
+            [
+              rehypePrettyCode as any,
+              {
+                theme: 'night-owl',
+              },
+            ],
+            rehypeKatex as any,
+          ],
+        },
+      }}
       {...props}
       components={{
-        code: Code,
         Table,
       }}
     />

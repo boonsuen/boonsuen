@@ -23,6 +23,10 @@
     @apply text-[28px] mb-2 mt-16 font-serif;
   }
 
+  .prose h3 {
+    @apply text-lg mb-2 mt-8 font-sans;
+  }
+
   .prose p {
     @apply mt-2 mb-6;
   }
@@ -36,6 +40,8 @@
     list-style-position: inside;
     list-style: none;
     margin-left: var(--space-6);
+    margin-top: 8px;
+    margin-bottom: 24px;
   }
 
   .prose li {
@@ -131,11 +137,11 @@
   }
 
   .prose pre {
-    @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
+    @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 px-4 py-3 my-6;
   }
 
   .prose code {
-    @apply px-1 py-0.5 rounded-lg;
+    @apply px-1 py-0.5 rounded-lg text-sm;
   }
 
   .prose pre code {

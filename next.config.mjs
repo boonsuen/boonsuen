@@ -1,12 +1,21 @@
-import * as NextMdx from '@next/mdx';
+import createMDX from '@next/mdx';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypePrettyCode from 'rehype-pretty-code';
 
-const withMDX = NextMdx.default({
+const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [
+      [
+        rehypePrettyCode,
+        {
+          theme: 'night-owl',
+        },
+      ],
+      rehypeKatex,
+    ],
   },
 });
 
