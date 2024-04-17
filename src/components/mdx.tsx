@@ -2,6 +2,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypePrettyCode from 'rehype-pretty-code';
+import Link from 'next/link';
 
 function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   let headers = data.headers.map((header, index) => (
@@ -23,6 +24,24 @@ function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
       <tbody>{rows}</tbody>
     </table>
   );
+}
+
+function CustomLink(props: any) {
+  let href = props.href;
+
+  if (href.startsWith('/')) {
+    return (
+      <Link href={href} {...props}>
+        {props.children}
+      </Link>
+    );
+  }
+
+  if (href.startsWith('#')) {
+    return <a {...props} />;
+  }
+
+  return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
 interface Props {
@@ -48,6 +67,7 @@ export function CustomMDX(props: Props) {
       }}
       {...props}
       components={{
+        a: CustomLink,
         Table,
       }}
     />

@@ -157,6 +157,33 @@
     margin: 0 !important;
   }
 
+  .prose table {
+    @apply my-8 w-full text-left text-sm;
+    table-layout: auto;
+  }
+
+  .prose thead {
+    border-bottom-width: 1px;
+    border-bottom-color: #d4d4d4;
+  }
+
+  .prose thead th {
+    @apply pr-2 pb-2 pt-[1px];
+  }
+
+  .prose :where(tbody tr) {
+    border-bottom-width: 1px;
+    border-bottom-color: #e5e5e5;
+  }
+
+  .prose :where(tbody tr:last-child) {
+    border-bottom-width: 0;
+  }
+
+  .prose :where(tbody td, tfoot td) {
+    @apply pr-2 py-2;
+  }
+
   .title {
     text-wrap: balance;
   }
