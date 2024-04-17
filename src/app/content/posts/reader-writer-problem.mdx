@@ -39,8 +39,9 @@ In Go, the `sync` package provides a `RWMutex` type as the readers-writer lock.
 It allows multiple readers or a single writer to access a resource at the same time, ensuring safe concurrent access of shared resources by multiple goroutines.
 
 In the following example, the map `data` is shared between multiple goroutines.
+However, maps in Go are [not safe for concurrent use](https://go.dev/blog/maps).
 
-```go
+```go showLineNumbers title="main.go"
 package main
 
 import (
@@ -74,7 +75,7 @@ func main() {
 If we run the code above with `go run -race main.go{:plaintext}`, we'll encounter the data race error from the compiler.
 To fix the issue, we can use the `RWMutex` to synchronize the access to the shared data.
 
-```go
+```go showLineNumbers title="main.go" {2,3,8,9}
 func (r *resource) read(key string) int {
 	r.mu.RLock()
 	defer r.mu.RUnlock()
@@ -88,8 +89,8 @@ func (r *resource) write(key string, value int) {
 }
 ```
 
-The `RLock` method is used to acquire a read lock, and `RUnlock` is used to release the lock.
-If a goroutine tries to call Lock() while other goroutines are already reading, any read attempts calling RLock() will block & wait until the writing goroutine has acquired the lock and finished.
+The `RLock()` method is used to acquire a read lock, and `RUnlock()` is used to release the lock.
+If a goroutine tries to call `Lock()` while other goroutines are already reading, any read attempts calling `RLock()` will block & wait until the writing goroutine has acquired the lock and finished.
 This makes sure the lock is eventually free for writing.
 
 Aside from this lock-based solution, there are other synchronization methods to deal with the reader-writer problem, such as semaphore and monitor-based solutions.
