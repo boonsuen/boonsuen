@@ -21,7 +21,12 @@ export async function generateMetadata({
     return;
   }
 
-  let { title, publishedAt: publishedTime, description } = post.metadata;
+  let {
+    title,
+    publishedAt: publishedTime,
+    description,
+    canonical,
+  } = post.metadata;
 
   return {
     title,
@@ -31,12 +36,15 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `https://boonsuen.com/posts/${post.slug}`,
+      url: `https://boonsuen.com/writing/${post.slug}`,
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+    },
+    alternates: {
+      canonical,
     },
   };
 }
