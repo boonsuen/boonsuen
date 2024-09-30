@@ -1,0 +1,35 @@
+---
+title: 'Temporal: Concepts & Blunders'
+publishedAt: '2024-09-29'
+---
+
+Temporal is a workflow orchestration engine that provides durable execution for distributed applications. Modern applications have many parts that are prone to failure due to external factors that we can’t control such as network timeouts, server downtime, and many other things that can happen due to the nature of distributed systems.
+
+Why Temporal? Temporal provides the platform we need to build reliable distributed systems that are easy to develop and maintain. Temporal handles things such as retries, state, timers, and queues for you. We get the best of both worlds: Infrastructure complexities are abstracted away, without sacrificing scalability and availability. No worries about the single point of failure while we can focus on coding the application and business logic.
+
+The goal of this article is to document and summarize the main concepts (that are interrelated to each other) in Temporal that have been learnt using it. It shows how Temporal works and how we can use it to build reliable applications.
+
+Distributed systems problems? Temporal.
+
+## Duration Execution
+
+Duration execution in Temporal means we can write code that can automatically survive and recover from failure, and continue its execution from the point-of-failure as if nothing happened.
+
+### Main components in Temporal
+
+_Temporal Server_: It contains the Event History of our workflows.
+
+_Event History_: Each workflow has its own Event History. Event History is a log of events that took place for a workflow execution. It is a crucial component that enables duration execution, as it will be used to reconstruct the state and recover from failure. Previously completed activities will not be re-executed during replay.
+
+_Workers_: A worker is one that actually runs the application/workflow code. Workers keep polling the Temporal Server task queue for tasks and execute them.
+A worker creates a copy of workflow code and stores it in cache. It grabs the Event History from the Temporal Server. It will run the cached workflow code. When it restarts, the code cache of the workflow is cleared, then it will create a new Workflow cache.
+
+- [Cache Workflows](https://typescript.temporal.io/api/interfaces/worker.WorkerOptions#maxcachedworkflows) continue execution from their last stopping point. Meaning, if the Worker still has the execution context (cache) of the workflow, it can just continue and resolve the last task. If the Worker is asked to run an uncached Workflow, then it has to fetch the Event History from the Server, create a new Workflow cache, and replay the entire Workflow history.
+
+_Temporal Client_: A client is a part of our application that interacts with the Temporal Server to run functions such as starting a new workflow execution, sending signals and queries to workflow, and more.
+
+### Putting it all together
+
+For example, Client sends a start workflow command to the Server. The Server saves the event in the Event History. A workflow task is then added to the Task Queue. The Worker polling the Task Queue gets the task and executes it. After executing the workflow task, the Worker reports the result back to the Server. Learn more: [How Durable Execution Works](https://temporal.io/blog/building-reliable-distributed-systems-in-node-js-part-2).
+
+With the workflow state recorded as the Event History in the Temporal Server, even when the application goes down and restarted, it can just continue to the next task by reconstructing the state using the Event History as if nothing happened.
